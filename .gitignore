@@ -1,0 +1,9 @@
+venv
+*.pyc
+*.swp
+staticfiles
+.env
+db.sqlite3
+tmp
+.DS_Store
+cache
