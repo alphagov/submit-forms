@@ -1,0 +1,8 @@
+{
+  "name": "Submit Forms",
+  "description": "Manage descriptions of offline forms",
+  "image": "heroku/python",
+  "repository": "https://github.com/alphagov/submit-forms",
+  "keywords": ["GOV.UK", "forms", "patterns", "registers", "python", "django"],
+  "addons": [ "heroku-postgresql" ]
+}

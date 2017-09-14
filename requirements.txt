@@ -1,0 +1,9 @@
+dj-database-url==0.4.2
+Django==1.11.1
+gunicorn==19.7.1
+psycopg2==2.7.1
+pytz==2017.2
+requests==2.14.2
+whitenoise==3.3.0
+waitress==0.8.9
+django-http-proxy==0.4.3

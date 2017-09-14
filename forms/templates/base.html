@@ -1,0 +1,86 @@
+{% extends "govuk_base.html" %}
+{% load staticfiles %}
+
+{% block page_title %}Form explorer{% endblock %}
+{% block header_class %}with-proposition{% endblock %}
+
+{% block head %}
+  <!--[if gt IE 8]><!--><link href="{% static 'stylesheets/govuk-elements-styles.css' %}"  rel="stylesheet" type="text/css"><!--<![endif]-->
+  <!--[if IE 6]><link href="{% static 'stylesheets/govuk-elements-styles-ie6.css?2' %}" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 7]><link href="{% static 'stylesheets/govuk-elements-styles-ie7.css?2' %}" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if IE 8]><link href="{% static 'stylesheets/govuk-elements-styles-ie8.css?2' %}" rel="stylesheet" type="text/css" /><![endif]-->
+
+  <link href="{% static 'stylesheets/styles.css' %}"  rel="stylesheet" type="text/css">
+  {% block base_body_head %}{% endblock %}
+{% endblock %}
+
+{% block proposition_header %}
+<div class='header-proposition'>
+  <div class='content'>
+    <a href='#proposition-links' class='js-header-toggle menu'>Menu</a>
+    <nav id='proposition-menu'>
+      <a href='/' id='proposition-name'>Form explorer</a>
+      <ul id='proposition-links'>
+        <li><a href="/organisations"{% block organisations_active %}{% endblock %}>Organisations</a>
+        <li><a href="/forms"{% block pages_active %}{% endblock %}>Forms</a>
+        <li><a href="/search"{% block search_active %}{% endblock %}>Search</a>
+      </ul>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">ALPHA</strong>
+        <span>This is a prototype.</span>
+      </p>
+      </div>
+    </div>
+  </div>
+
+    {% block content %}{% endblock %}
+</main>
+{% endblock %}
+
+{% block body_end %}
+<script type="text/javascript" src="{% static 'vendor/jquery-2.2.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/jquery.tablesorter.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/taggle.js' %}"></script>
+<script type="text/javascript">
+function month(name) {
+  return "JanFebMarAprMayJunJulAugSepOctNovDec".indexOf(name) / 3 + 1;
+}
+
+function pad(num) {
+    var s = "00" + num;
+    return s.substr(s.length-2);
+}
+
+$(function () {
+  $.tablesorter.addParser({
+        id: 'when',
+        format: function d(s) {
+          a = s.split(" ");
+          return a[2] + pad(month(a[1])) + pad(a[0]);
+        },
+        type: 'text'
+  }); 
+
+  $("table").tablesorter();
+});
+</script>
+{% block body_end_script %}{% endblock %}
+{% endblock %}
+
+{% block footer_support_links %}
+    <ul>
+    <li>This site has been built using <a href="https://github.com/openregister/government-form-data">open source</a> code on
+    <a href="https://github.com/openregister/government-form-explorer">open data</a>.</li>
+    </ul>
+</p>
+{% endblock %}

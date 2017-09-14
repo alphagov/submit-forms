@@ -1,8 +1,9 @@
 # Submit Forms
 
-Prototyping an intermediate format for describing government forms.
+Prototyping a framework for describing government forms.
 
-The goal is to allow forms to be created using a number of different tools, imported from a number of different formats, and output and run in a number of different ways, including, but not limited to:
+The goal is to allow forms to be created using a number of different tools, imported from a number of different formats, and output and run in a number of different ways
+including, but not limited to:
 
 * [Home Office Forms](https://github.com/UKHomeOfficeForms)
 * [ONS eQ survey runner](https://github.com/ONSdigital/eq-survey-runner)
