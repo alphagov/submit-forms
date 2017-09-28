@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.aptosolutions.co.uk/businesslink/psc/059000101/LAFoodBusiness/1.1"
+    xmlns:common="http://www.aptosolutions.co.uk/businesslink/psc/common/2.3"
+    targetNamespace="http://www.aptosolutions.co.uk/businesslink/psc/059000101/LAFoodBusiness/1.1"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://www.aptosolutions.co.uk/businesslink/psc/common/2.3"
+        schemaLocation="PSC-Common.xsd"/>
+
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="common:CommonSections"/>
+                <xs:element name="EstablishmentAddress" type="common:AddressWithPullThroughType"/>
+                <xs:element name="businessName" type="xs:string"/>
+                <xs:element name="premisesTelephone" type="xs:string"/>
+                <xs:element name="Operator">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Name" type="common:NameType"/>
+                            <xs:element name="Address" type="common:AddressType"/>
+                            <xs:element name="ContactDetails" type="common:ContactDetailsType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="FoodBusinessTypes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="farmShop" type="common:BoolType"/>
+                            <xs:element name="foodManufacturing" type="common:BoolType"/>
+                            <xs:element name="packer" type="common:BoolType"/>
+                            <xs:element name="importer" type="common:BoolType"/>
+                            <xs:element name="wholesale" type="common:BoolType"/>
+                            <xs:element name="distribution" type="common:BoolType"/>
+                            <xs:element name="retailer" type="common:BoolType"/>
+                            <xs:element name="restaurant" type="common:BoolType"/>
+                            <xs:element name="market" type="common:BoolType"/>
+                            <xs:element name="seasonalSlaughter" type="common:BoolType"/>
+                            <xs:element name="staffRestaurant" type="common:BoolType"/>
+                            <xs:element name="catering" type="common:BoolType"/>
+                            <xs:element name="hospitalSchool" type="common:BoolType"/>
+                            <xs:element name="hotelPub" type="common:BoolType"/>
+                            <xs:element name="privateHouse" type="common:BoolType"/>
+                            <xs:element name="moveableEstablishment" type="common:BoolType"/>
+                            <xs:element name="marketStall" type="common:BoolType"/>
+                            <xs:element name="foodBroker" type="common:BoolType"/>
+                            <xs:element name="takeaway" type="common:BoolType"/>
+                            <xs:element name="livestock" type="common:BoolType"/>
+                            <xs:element name="arable" type="common:BoolType"/>
+                            <xs:element name="other" type="common:BoolType"/>
+                            <xs:element name="otherDetails" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BusinessType">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="businessType" type="common:BusinessType"/>
+                            <xs:element name="otherDetails" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="LimtedCompanyDetails">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="companyAddress"
+                                type="common:AddressWithPullThroughType"/>
+                            <xs:element name="companyDetails" type="common:BusinessDetailsType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="vehicles" type="xs:string"/>
+                <xs:element name="Water">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="public" type="common:BoolType"/>
+                            <xs:element name="private" type="common:BoolType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="isManagerDifferentFromOperator" type="common:BoolType"/>
+                <xs:element name="Manager" type="common:NameType" minOccurs="0"/>
+                <xs:element name="isNew" type="common:BoolType"/>
+                <xs:element name="businessStartDate" type="common:Date" minOccurs="0"/>
+                <xs:element name="isSeasonal" type="common:BoolType"/>
+                <xs:element name="seasonalPeriod" type="xs:string" minOccurs="0"/>
+                <xs:element name="numberOfStaff" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
