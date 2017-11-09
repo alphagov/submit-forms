@@ -18,6 +18,7 @@ and formats such as:
 * [Adobe XML Forms Architecture (XFA)](https://en.wikipedia.org/wiki/XFA)
 * [Angular schema form](http://schemaform.io/)
 * [React schema form](https://github.com/mozilla-services/react-jsonschema-form)
+* [SurveyJS](https://surveyjs.io/)
 
 The need for a standard forms description language has been raised by the West Midlands Fire service as an [open standards challenge](https://github.com/alphagov/open-standards/issues/51) for government.
 
