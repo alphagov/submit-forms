@@ -7,3 +7,4 @@ requests==2.14.2
 whitenoise==3.3.0
 waitress==0.8.9
 django-http-proxy==0.4.3
+natsort==5.0.3
