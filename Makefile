@@ -16,8 +16,9 @@ migrate:
 	python3 manage.py migrate
 
 load:
-	python3 manage.py load organisations
-	python3 manage.py load forms
+	python3 manage.py load phase
+	python3 manage.py load datatype
+	python3 manage.py load inputtype
 
 flake8:
 	flake8

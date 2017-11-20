@@ -48,7 +48,7 @@ class Validation(models.Model):
 
 
 class FieldType(models.Model):
-    fieldtype = models.CharField(max_length=32, primary_key=True, default='')
+    fieldtype = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=256, blank=True, default='')
     description = models.TextField(blank=True, default='')
     inputtype = models.ForeignKey(InputType)
@@ -59,7 +59,7 @@ class FieldType(models.Model):
 class Field(models.Model):
     field = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=256, blank=True, default='')
-    #fieldtype = models.ForeignKey(FieldType, default='text')
+    fieldtype = models.ForeignKey(FieldType, default=0)
 
 
 class FieldGroup(models.Model):
@@ -77,11 +77,9 @@ class Question(models.Model):
     question = models.IntegerField(primary_key=True)
     description = models.TextField(blank=True, default='')
     text = models.TextField(blank=True, default='')
-
-    # the fieldgroup, which may be repeated ..
     fieldgroup = models.ForeignKey(FieldGroup, default='')
-    min_length = models.PositiveIntegerField(default=1)
-    max_length = models.PositiveIntegerField(default=1)
+    min_length = models.PositiveIntegerField(default=1, help_text='Minimum number of times the fieldgroup maybe repeated')
+    max_length = models.PositiveIntegerField(default=1, help_text='Maximum number of times the fieldgroup maybe repeated')
 
 
 class Section(models.Model):
