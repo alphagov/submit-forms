@@ -47,19 +47,13 @@ class Validation(models.Model):
     #blacklist = models.OneToOneField(List)
 
 
-class FieldType(models.Model):
-    fieldtype = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=256, blank=True, default='')
-    description = models.TextField(blank=True, default='')
-    inputtype = models.ForeignKey(InputType)
-    datatype = models.ForeignKey(DataType)
-    validation = models.ForeignKey(Validation)
-
-
 class Field(models.Model):
     field = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=256, blank=True, default='')
-    fieldtype = models.ForeignKey(FieldType, default=0)
+    description = models.TextField(blank=True, default='')
+    inputtype = models.ForeignKey(InputType, default='text')
+    datatype = models.ForeignKey(DataType, default='string')
+    validation = models.ForeignKey(Validation, default='')
 
 
 class FieldGroup(models.Model):
