@@ -3,7 +3,7 @@ all:	flake8
 refresh:	clean init static migrate load
 
 server:
-	python3 manage.py runserver
+	python3 manage.py runserver 8808
 
 init:
 	pip3 install -r requirements.txt
