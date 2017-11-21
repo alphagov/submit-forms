@@ -3,23 +3,20 @@ from django.core.management.base import BaseCommand
 import io
 import os
 import csv
-import requests
 
 from ...models import Organisation, Phase, DataType, InputType
 
 from django.utils.dateparse import parse_datetime
 from django.core.exceptions import ObjectDoesNotExist
 
-url = 'https://raw.githubusercontent.com/alphagov/submit-forms/master/data/%s.tsv'
+path = './data/%s.tsv'
 field_sep = ';'
 sep = '\t'
 
 
 def tsv_reader(name):
-    """ read register-like data from government-form-data TSV"""
-    resp = requests.get(url=url % (name))
-    resp.raise_for_status()
-    return csv.DictReader(io.StringIO(resp.text), delimiter=sep)
+    """ read register-like data from TSV"""
+    return csv.DictReader(open(path % (name)), delimiter=sep)
 
 
 def load_organisation():
