@@ -1,3 +1,13 @@
+#product-name {
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 5px;
+}
+
+#proposition-menu {
+  float: right;
+}
+
 dt {
   margin-top: 1.05263em;
   line-height: 1.31579;

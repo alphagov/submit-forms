@@ -1,8 +1,10 @@
 {% extends "govuk_base.html" %}
 {% load staticfiles %}
 
-{% block page_title %}Form explorer{% endblock %}
+{% block page_title %}GOV.UK Submit{% endblock %}
 {% block header_class %}with-proposition{% endblock %}
+{% block product_name %}<span id="product-name">Sumbit</span>{% endblock %}
+
 
 {% block head %}
   <!--[if gt IE 8]><!--><link href="{% static 'stylesheets/govuk-elements-styles.css' %}"  rel="stylesheet" type="text/css"><!--<![endif]-->
@@ -19,11 +21,12 @@
   <div class='content'>
     <a href='#proposition-links' class='js-header-toggle menu'>Menu</a>
     <nav id='proposition-menu'>
-      <a href='/' id='proposition-name'>Form explorer</a>
       <ul id='proposition-links'>
         <li><a href="/organisations"{% block organisations_active %}{% endblock %}>Organisations</a>
-        <li><a href="/forms"{% block pages_active %}{% endblock %}>Forms</a>
-        <li><a href="/search"{% block search_active %}{% endblock %}>Search</a>
+        <li><a href="/forms"{% block forms_active %}{% endblock %}>Forms</a>
+        <li><a href="/questions"{% block questions_active %}{% endblock %}>Questions</a>
+        <li><a href="/fields"{% block fields_active %}{% endblock %}>Fields</a>
+        <li><a href="/inputtypes"{% block inputtypes_active %}{% endblock %}>Input types</a>
       </ul>
     </nav>
   </div>
