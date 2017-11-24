@@ -2,5 +2,6 @@ datatype	description
 integer	
 decimal	
 string	
+date	
 datetime	
 timestamp	

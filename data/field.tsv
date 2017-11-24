@@ -1,0 +1,4 @@
+field	label	hint	inputtype	datatype
+name	Full name		text	string
+email	Email address		text	string
+date-of-birth	Date of birth		date	date

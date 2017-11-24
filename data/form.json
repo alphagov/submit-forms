@@ -1,0 +1,15 @@
+[
+{
+    "model": "forms.form",
+    "pk": 1,
+    "fields": {
+        "heading": "Simple",
+        "description": "A simple example form",
+        "phase": "alpha",
+        "reference": "EXAMPLE-1",
+        "organisations": [
+            "government-organisation:OT1056"
+        ]
+    }
+}
+]

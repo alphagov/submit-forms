@@ -1,0 +1,38 @@
+[
+{
+    "model": "forms.field",
+    "pk": "date-of-birth",
+    "fields": {
+        "label": "Date of birth",
+        "hint": "",
+        "inputtype": "date",
+        "datatype": "date",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "email",
+    "fields": {
+        "label": "Email address",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "name",
+    "fields": {
+        "label": "Full name",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+}
+]

@@ -1,0 +1,20 @@
+[
+{
+    "model": "forms.questionfield",
+    "pk": 1,
+    "fields": {
+        "question": 2,
+        "field": "email",
+        "order": 0
+    }
+},
+{
+    "model": "forms.questionfield",
+    "pk": 2,
+    "fields": {
+        "question": 1,
+        "field": "name",
+        "order": 0
+    }
+}
+]

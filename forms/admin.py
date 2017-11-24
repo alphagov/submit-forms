@@ -1,13 +1,53 @@
 from django.contrib import admin
-from .models import Organisation, Phase, DataType, InputType, Validation, Field, Question, Section, Form, FormSection
+from .models import Organisation, Phase, DataType, InputType, List, Field, Question, Section, Form, QuestionField, FormSection, SectionQuestion
 
 
-admin.site.register(Organisation)
-admin.site.register(Validation)
-admin.site.register(Field)
 
-admin.site.register(Question)
-admin.site.register(Section)
+@admin.register(Organisation)
+class OrganisationAdmin(admin.ModelAdmin):
+    list_display = ['organisation', 'name']
+
+
+@admin.register(Phase)
+class PhaseAdmin(admin.ModelAdmin):
+    list_display = ['phase']
+
+
+@admin.register(DataType)
+class DataTypeAdmin(admin.ModelAdmin):
+    list_display = ('datatype', 'description')
+
+
+@admin.register(InputType)
+class InputTypeAdmin(admin.ModelAdmin):
+    list_display = ['inputtype']
+
+
+class QuestionFieldInline(admin.TabularInline):
+    model = QuestionField
+    extra = 1
+
+
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ['question', 'heading']
+    inlines = (QuestionFieldInline,)
+
+
+@admin.register(Field)
+class FieldAdmin(admin.ModelAdmin):
+    list_display = ['field', 'label', 'inputtype', 'datatype']
+
+
+class SectionQuestionInline(admin.TabularInline):
+    model = SectionQuestion
+    extra = 1
+
+
+@admin.register(Section)
+class SectionAdmin(admin.ModelAdmin):
+    list_display = ['heading']
+    inlines = (SectionQuestionInline,)
 
 
 class FormSectionInline(admin.TabularInline):
@@ -17,20 +57,5 @@ class FormSectionInline(admin.TabularInline):
 
 @admin.register(Form)
 class FormAdmin(admin.ModelAdmin):
-    list_display = ['form', 'phase', 'reference', 'name', 'description']
+    list_display = ['form', 'phase', 'reference', 'heading']
     inlines = (FormSectionInline,)
-
-
-@admin.register(InputType)
-class InputTypeAdmin(admin.ModelAdmin):
-    list_display = ['inputtype']
-
-
-@admin.register(DataType)
-class DataTypeAdmin(admin.ModelAdmin):
-    list_display = ('datatype', 'description')
-
-
-@admin.register(Phase)
-class PhaseAdmin(admin.ModelAdmin):
-    list_display = ['phase']
