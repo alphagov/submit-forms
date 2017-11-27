@@ -1,0 +1,72 @@
+{% extends "runner/base.html" %}
+{% load staticfiles %}
+{% block header_class %}with-proposition{% endblock %}
+
+{% block proposition_header %}
+<div class='header-proposition'>
+  <div class='content'>
+    <nav id='proposition-menu'>
+      <a href="/form/{{form.form}}" id="proposition-name">{{ form.heading }}</a>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+  {% for section in form.sections.all %}
+  <div class="section">
+    <h2 class="heading-large">{{ section.heading }}</h2>
+
+    {% if section.guidance %}
+    <p>{{ section.guidance }}</p>
+    {% endif %}
+
+    {% for question in section.questions.all %}
+
+    <div class="form-group">
+      <fieldset>
+          <legend>
+              <h1 class="heading-medium">{{ question.heading }}</h1>
+
+              {% if question.guidance %}
+              <span class="body-text">{{ question.guidance }}</span>
+              {% endif %}
+          </legend>
+
+      {% if question.warning %}<p>{{ question.warning }}</p>{% endif %}
+
+      {% if question.detail %}<p>{{ question.detail }}</p>{% endif %}
+
+      {% for field in question.fields.all %}
+
+        <label class="form-label" for="{{field.field}}">
+          {% if question.fields.count > 1 %}{{field.label}}{% endif %}
+          {% if field.hint %}<span class="form-hint">{{ field.hint }}</span>{% endif %}
+        </label>
+
+        {% if field.inputtype|stringformat:"s" == 'text' %}
+        <input class="form-control" id="{{field.field}}" type="text" name="{{field.field}}">
+        {% endif %}
+
+        {% if field.inputtype|stringformat:"s" == 'textarea' %}
+        <textarea class="form-control form-control-3-4" name="{{field.field}}" rows="5"></textarea>
+        {% endif %}
+
+      {% endfor %}
+
+    {% endfor %}
+
+  </div>
+  {% endfor %}
+
+  <div class="form-group">
+    <input class="button" type="submit" value="Submit">
+  </div>
+
+  <div class="action-button-links">
+     <a onclick="history.back(-1);" href="#">Back</a>
+  </div>
+
+{% endblock %}

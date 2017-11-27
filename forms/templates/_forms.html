@@ -1,0 +1,20 @@
+<table class="forms">
+<thead>
+<tr>
+  <th scope="col">Form</th>
+  <th scope="col" class="numeric">Sections</th>
+  <th scope="col" class="numeric">Questions</th>
+</tr>
+</thead>
+<tbody>
+
+{% for form in forms %}
+    <tr>
+      <td><a href="/form/{{ form.form }}/">{{ form.heading }}</a></td>
+      <td class="numeric">{{ form.n_sections }}</td>
+      <td class="numeric">{{ form.n_questions }}</td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>

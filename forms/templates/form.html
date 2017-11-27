@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  {% include '_breadcrumbs.html' %}
+
+  <h1 class="heading-xlarge"><span class="heading-secondary">Form</span>{{ form.heading }}</h1>
+
+  <h2 class="heading-small">Phase</h2>
+  <p><strong class="phase-tag">{{form.phase}}</strong>
+
+  <h2 class="heading-small">Reference</h2>
+  <p>{{ form.reference }}</p>
+
+  <h2 class="heading-small">Description</h2>
+  <p>{{ form.description }}</p>
+
+  {% for section in form.sections.all %}
+    <h2 class="heading-large"><span class="heading-secondary">Section <span class="number">{{section.number}}</span></span> {{ section.heading }}</h2>
+
+    {% if section.guidance %}
+    <h4 class="heading-small">Guidance</h4>
+    <p>{{ section.guidance }}</p>
+    {% endif %}
+
+    {% for question in section.questions.all %}
+      <div class="example">
+      <h3 class="heading-large"><span class="heading-secondary">Question <span class="number">{{question.number}}</span></span>{{ question.heading }}</h3>
+
+      {% if question.guidance %}
+      <h4 class="heading-small">Guidance</h4>
+      <p>{{ question.guidance }}</p>
+      {% endif %}
+
+      {% if question.warning %}
+      <h4 class="heading-small">Warning</h4>
+      <p>{{ question.warning }}</p>
+      {% endif %}
+
+      {% if question.detail %}
+      <h4 class="heading-small">Detail</h4>
+      <p>{{ question.detail }}</p>
+      {% endif %}
+
+      {% for field in question.fields.all %}
+        <h4 class="heading-large"><span class="heading-secondary">Field <span class="number">{{field.number}}</span></span>{{ field.label }}</h4>
+
+        {% if field.hint %}
+        <h5 class="heading-small">Hint</h5>
+        <p>{{ field.hint }}</p>
+        {% endif %}
+
+        <h5 class="heading-small">Input type</h5>
+        <p>{{ field.inputtype }}</p>
+
+        <h5 class="heading-small">Data type</h5>
+        <p>{{ field.datatype }}</p>
+
+        {% if field.whitelists.all %}
+          <h5 class="heading-small">Whitelists</h5>
+          {% for list in field.whitelists.all %}
+            <p>{{ list.name }}</p>
+            <p>{{ list.description }}</p>
+            <p>{{ list.datatype }}</p>
+          {% endfor %}
+        {% endif %}
+
+        {% if field.blacklists.all %}
+          <h5 class="heading-small">Blacklists</h5>
+          {% for list in field.blacklists.all %}
+            <p>{{ list.name }}</p>
+            <p>{{ list.description }}</p>
+            <p>{{ list.datatype }}</p>
+          {% endfor %}
+        {% endif %}
+
+      {% endfor %}
+      </div>
+
+    {% endfor %}
+
+  {% endfor %}
+
+  <h2 class="heading-medium">Preview this form</h2>
+
+  <ul class="list list-bullet">
+    {% for runner, r in runners.items %}
+      <li>as <a href="preview/{{ runner }}">{{ r.media }}</a> using <a href="{{ r.url }}">{{ r.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

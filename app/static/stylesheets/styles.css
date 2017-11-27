@@ -8,6 +8,14 @@
   float: right;
 }
 
+.example {
+  border: 1px solid #bfc1c3;
+  padding: 0 30px 45px;
+  margin-top: 45px;
+}
+
+
+
 dt {
   margin-top: 1.05263em;
   line-height: 1.31579;
