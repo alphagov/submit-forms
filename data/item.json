@@ -1,0 +1,26 @@
+[
+{
+    "model": "forms.item",
+    "pk": 1,
+    "fields": {
+        "label": "Male",
+        "value": "M"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 2,
+    "fields": {
+        "label": "Female",
+        "value": "F"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 3,
+    "fields": {
+        "label": "Unspecified",
+        "value": "U"
+    }
+}
+]

@@ -20,6 +20,8 @@ load:	data/organisation.tsv
 	python3 manage.py load datatype
 	python3 manage.py load inputtype
 	python3 manage.py loaddata data/list.json
+	python3 manage.py loaddata data/item.json
+	python3 manage.py loaddata data/list-item.json
 	python3 manage.py loaddata data/field.json
 	python3 manage.py loaddata data/question.json
 	python3 manage.py loaddata data/question-field.json
@@ -29,7 +31,9 @@ load:	data/organisation.tsv
 	python3 manage.py loaddata data/form-section.json
 
 save:
-	python3 manage.py dumpdata --indent 4 forms.List forms.Item > data/list.json
+	python3 manage.py dumpdata --indent 4 forms.List > data/list.json
+	python3 manage.py dumpdata --indent 4 forms.Item > data/item.json
+	python3 manage.py dumpdata --indent 4 forms.ListItem > data/list-item.json
 	python3 manage.py dumpdata --indent 4 forms.Field > data/field.json
 	python3 manage.py dumpdata --indent 4 forms.Question > data/question.json
 	python3 manage.py dumpdata --indent 4 forms.QuestionField > data/question-field.json

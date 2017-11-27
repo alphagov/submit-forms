@@ -1,0 +1,29 @@
+[
+{
+    "model": "forms.listitem",
+    "pk": 1,
+    "fields": {
+        "_list": 1,
+        "item": 2,
+        "number": 0
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 2,
+    "fields": {
+        "_list": 1,
+        "item": 1,
+        "number": 1
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 3,
+    "fields": {
+        "_list": 1,
+        "item": 3,
+        "number": 2
+    }
+}
+]
