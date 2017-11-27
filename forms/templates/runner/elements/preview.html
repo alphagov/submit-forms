@@ -23,23 +23,23 @@
     <p>{{ section.guidance }}</p>
     {% endif %}
 
-    {% for question in section.questions.all %}
+    {% for sectionquestion in section.sectionquestion_set.all %}
 
     <div class="form-group">
       <fieldset>
           <legend>
-              <h1 class="heading-medium">{{ question.heading }}</h1>
+              <h1 class="heading-medium">{{ sectionquestion.question.heading }}</h1>
 
-              {% if question.guidance %}
-              <span class="body-text">{{ question.guidance }}</span>
+              {% if sectionquestion.question.guidance %}
+              <span class="body-text">{{ sectionquestion.question.guidance }}</span>
               {% endif %}
           </legend>
 
-      {% if question.warning %}<p>{{ question.warning }}</p>{% endif %}
+      {% if sectionquestion.question.warning %}<p>{{ sectionquestion.question.warning }}</p>{% endif %}
 
-      {% if question.detail %}<p>{{ question.detail }}</p>{% endif %}
+      {% if sectionquestion.question.detail %}<p>{{ sectionquestion.question.detail }}</p>{% endif %}
 
-      {% for field in question.fields.all %}
+      {% for field in sectionquestion.question.fields.all %}
 
         <label class="form-label" for="{{field.field}}">
           {% if question.fields.count > 1 %}{{field.label}}{% endif %}
@@ -53,6 +53,7 @@
         {% if field.inputtype|stringformat:"s" == 'textarea' %}
         <textarea class="form-control form-control-3-4" name="{{field.field}}" rows="5"></textarea>
         {% endif %}
+
 
       {% endfor %}
 
