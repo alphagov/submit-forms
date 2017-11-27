@@ -54,6 +54,18 @@
         <textarea class="form-control form-control-3-4" name="{{field.field}}" rows="5"></textarea>
         {% endif %}
 
+        {% if field.inputtype|stringformat:"s" == 'radio' %}
+        {% for list in field.whitelists.all %}
+          {% for item in list.items.all %}
+          <div class="multiple-choice">
+              <input id="{{ field.field }}-radio-{{ forloop.revcounter }}" type="radio" name="radio-group" value="{{ item.value }}">
+              <label for="{{ field.field }}-radio-{{ forloop.revcounter }}">{{ item.label }}</label>
+          </div>
+          {% if not forloop.last %}{% ifequal forloop.revcounter 2 %}<p class="form-block">or</p>{% endifequal %}{% else %}{% endif %}
+          {% endfor %}
+        {% endfor %}
+        {% endif %}
+
 
       {% endfor %}
 
