@@ -7,5 +7,14 @@
         "description": "You should only ask about gender or sex if you can\u2019t deliver your service without this information.\r\n\r\nIf you do need to ask, use \u2018sex\u2019 when you need biological data (for example, if you\u2019re providing a medical service). In all other cases, use \u2018gender\u2019.",
         "datatype": "string"
     }
+},
+{
+    "model": "forms.list",
+    "pk": 2,
+    "fields": {
+        "name": "waste-transport-category",
+        "description": "Types of waste transported regularly",
+        "datatype": "string"
+    }
 }
 ]

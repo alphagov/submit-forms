@@ -52,5 +52,14 @@
         "field": "gender",
         "number": 0
     }
+},
+{
+    "model": "forms.questionfield",
+    "pk": 7,
+    "fields": {
+        "question": 7,
+        "field": "waste-transported",
+        "number": 0
+    }
 }
 ]

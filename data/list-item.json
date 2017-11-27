@@ -25,5 +25,32 @@
         "item": 3,
         "number": 2
     }
+},
+{
+    "model": "forms.listitem",
+    "pk": 4,
+    "fields": {
+        "_list": 2,
+        "item": 5,
+        "number": 1
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 5,
+    "fields": {
+        "_list": 2,
+        "item": 6,
+        "number": 2
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 6,
+    "fields": {
+        "_list": 2,
+        "item": 7,
+        "number": 0
+    }
 }
 ]

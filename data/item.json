@@ -22,5 +22,37 @@
         "label": "Unspecified",
         "value": "U"
     }
+},
+{
+    "model": "forms.item",
+    "pk": 4,
+    "fields": {
+        "label": "Waste from animal carcasses",
+        "value": "A"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 5,
+    "fields": {
+        "label": "Waste from mines or quarries",
+        "value": "M"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 6,
+    "fields": {
+        "label": "Farm or agricultural waste",
+        "value": "F"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 7,
+    "fields": {
+        "label": "Waste from animal carcasses",
+        "value": "A"
+    }
 }
 ]

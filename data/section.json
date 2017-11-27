@@ -22,5 +22,13 @@
         "heading": "How should we improve this page?",
         "guidance": ""
     }
+},
+{
+    "model": "forms.section",
+    "pk": 4,
+    "fields": {
+        "heading": "Waste transportation",
+        "guidance": ""
+    }
 }
 ]

@@ -70,5 +70,14 @@
         "question": 6,
         "number": 2
     }
+},
+{
+    "model": "forms.sectionquestion",
+    "pk": 9,
+    "fields": {
+        "section": 4,
+        "question": 7,
+        "number": 0
+    }
 }
 ]

@@ -87,6 +87,20 @@
 },
 {
     "model": "forms.field",
+    "pk": "waste-transported",
+    "fields": {
+        "label": "Waste transported",
+        "hint": "Select all that apply",
+        "inputtype": "checkbox",
+        "datatype": "string",
+        "whitelists": [
+            2
+        ],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
     "pk": "what-went-wrong",
     "fields": {
         "label": "What went wrong",

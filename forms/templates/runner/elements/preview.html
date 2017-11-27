@@ -33,6 +33,7 @@
               {% if sectionquestion.question.guidance %}
               <span class="body-text">{{ sectionquestion.question.guidance }}</span>
               {% endif %}
+
           </legend>
 
       {% if sectionquestion.question.warning %}<p>{{ sectionquestion.question.warning }}</p>{% endif %}
@@ -47,23 +48,36 @@
         </label>
 
         {% if field.inputtype|stringformat:"s" == 'text' %}
+
         <input class="form-control" id="{{field.field}}" type="text" name="{{field.field}}">
-        {% endif %}
 
-        {% if field.inputtype|stringformat:"s" == 'textarea' %}
+        {% elif field.inputtype|stringformat:"s" == 'textarea' %}
+
         <textarea class="form-control form-control-3-4" name="{{field.field}}" rows="5"></textarea>
-        {% endif %}
 
-        {% if field.inputtype|stringformat:"s" == 'radio' %}
-        {% for list in field.whitelists.all %}
-          {% for item in list.items.all %}
-          <div class="multiple-choice">
-              <input id="{{ field.field }}-radio-{{ forloop.revcounter }}" type="radio" name="radio-group" value="{{ item.value }}">
-              <label for="{{ field.field }}-radio-{{ forloop.revcounter }}">{{ item.label }}</label>
-          </div>
-          {% if not forloop.last %}{% ifequal forloop.revcounter 2 %}<p class="form-block">or</p>{% endifequal %}{% else %}{% endif %}
+        {% elif field.inputtype|stringformat:"s" == 'radio' %}
+
+          {% for list in field.whitelists.all %}
+            {% for item in list.items.all %}
+            <div class="multiple-choice">
+                <input id="{{ field.field }}-radio-{{ forloop.revcounter }}" type="radio" name="radio-group" value="{{ item.value }}">
+                <label for="{{ field.field }}-radio-{{ forloop.revcounter }}">{{ item.label }}</label>
+            </div>
+            {% if not forloop.last %}{% ifequal forloop.revcounter 2 %}<p class="form-block">or</p>{% endifequal %}{% else %}{% endif %}
+            {% endfor %}
           {% endfor %}
-        {% endfor %}
+
+        {% elif field.inputtype|stringformat:"s" == 'checkbox' %}
+
+          {% for list in field.whitelists.all %}
+            {% for item in list.items.all %}
+            <div class="multiple-choice">
+                <input id="{{ field.field }}--{{ forloop.revcounter }}" type="checkbox" name="radio-group" value="{{ item.value }}">
+                <label for="{{ field.field }}--{{ forloop.revcounter }}">{{ item.label }}</label>
+            </div>
+            {% endfor %}
+          {% endfor %}
+
         {% endif %}
 
 
