@@ -5,7 +5,25 @@
     "fields": {
         "form": 1,
         "section": 1,
-        "order": 0
+        "number": 0
+    }
+},
+{
+    "model": "forms.formsection",
+    "pk": 2,
+    "fields": {
+        "form": 2,
+        "section": 2,
+        "number": 0
+    }
+},
+{
+    "model": "forms.formsection",
+    "pk": 3,
+    "fields": {
+        "form": 3,
+        "section": 3,
+        "number": 0
     }
 }
 ]

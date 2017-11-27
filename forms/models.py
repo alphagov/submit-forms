@@ -37,6 +37,9 @@ class Item(models.Model):
     label = models.CharField(max_length=256, blank=True, default='')
     value = models.CharField(max_length=256, blank=True, default='')
 
+    def __str__(self):
+        return self.value + " " + self.label
+
 
 class List(models.Model):
     name = models.CharField(max_length=256)
@@ -48,7 +51,10 @@ class List(models.Model):
 class ListItem(models.Model):
     _list = models.ForeignKey(List)
     item = models.ForeignKey(Item)
-    order = models.PositiveIntegerField()
+    number = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ['number']
 
 
 class Field(models.Model):
@@ -57,15 +63,15 @@ class Field(models.Model):
     hint = models.TextField(blank=True, default='')
     inputtype = models.ForeignKey(InputType, default='text')
     datatype = models.ForeignKey(DataType, default='string')
-    whitelists = models.ManyToManyField(List, related_name='whitelists')
-    blacklists = models.ManyToManyField(List, related_name='blacklists')
+    whitelists = models.ManyToManyField(List, related_name='whitelists', blank=True)
+    blacklists = models.ManyToManyField(List, related_name='blacklists', blank=True)
 
     def __str__(self):
         return self.field
 
 
 class Question(models.Model):
-    question = models.IntegerField(primary_key=True)
+    question = models.AutoField(primary_key=True)
     heading = models.TextField(blank=True, default='')
     guidance = models.TextField(blank=True, default='')
     warning = models.TextField(blank=True, default='')
@@ -79,11 +85,14 @@ class Question(models.Model):
 class QuestionField(models.Model):
     question = models.ForeignKey(Question)
     field = models.ForeignKey(Field)
-    order = models.PositiveIntegerField()
+    number = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ['number']
 
 
 class Section(models.Model):
-    section = models.IntegerField(primary_key=True)
+    section = models.AutoField(primary_key=True)
     heading = models.TextField(blank=True, default='')
     guidance = models.TextField(blank=True, default='')
     questions = models.ManyToManyField(Question, through='SectionQuestion')
@@ -95,11 +104,14 @@ class Section(models.Model):
 class SectionQuestion(models.Model):
     section = models.ForeignKey(Section)
     question = models.ForeignKey(Question)
-    order = models.PositiveIntegerField()
+    number = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ['number']
 
 
 class Form(models.Model):
-    form = models.IntegerField(primary_key=True)
+    form = models.AutoField(primary_key=True)
     heading = models.TextField(blank=True, default='')
     description = models.TextField(blank=True, default='')
     phase = models.ForeignKey(Phase, default='alpha')
@@ -111,4 +123,7 @@ class Form(models.Model):
 class FormSection(models.Model):
     form = models.ForeignKey(Form)
     section = models.ForeignKey(Section)
-    order = models.PositiveIntegerField()
+    number = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ['number']

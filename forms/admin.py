@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Organisation, Phase, DataType, InputType, List, Field, Question, Section, Form, QuestionField, FormSection, SectionQuestion
+from .models import Organisation, Phase, DataType, InputType, List, ListItem, Item, Field, Question, Section, Form, QuestionField, FormSection, SectionQuestion
 
 
 
@@ -21,6 +21,22 @@ class DataTypeAdmin(admin.ModelAdmin):
 @admin.register(InputType)
 class InputTypeAdmin(admin.ModelAdmin):
     list_display = ['inputtype']
+
+
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ['label', 'value']
+
+
+class ListItemInline(admin.TabularInline):
+    model = ListItem
+    extra = 1
+
+
+@admin.register(List)
+class InputTypeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'datatype']
+    inlines = (ListItemInline,)
 
 
 class QuestionFieldInline(admin.TabularInline):
@@ -46,7 +62,7 @@ class SectionQuestionInline(admin.TabularInline):
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
-    list_display = ['heading']
+    list_display = ['section', 'heading']
     inlines = (SectionQuestionInline,)
 
 
@@ -57,5 +73,5 @@ class FormSectionInline(admin.TabularInline):
 
 @admin.register(Form)
 class FormAdmin(admin.ModelAdmin):
-    list_display = ['form', 'phase', 'reference', 'heading']
+    list_display = ['form', 'heading', 'phase', 'reference']
     inlines = (FormSectionInline,)

@@ -13,6 +13,18 @@
 },
 {
     "model": "forms.field",
+    "pk": "doing",
+    "fields": {
+        "label": "What you were doing",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
     "pk": "email",
     "fields": {
         "label": "Email address",
@@ -25,9 +37,57 @@
 },
 {
     "model": "forms.field",
+    "pk": "happened",
+    "fields": {
+        "label": "What happened",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
     "pk": "name",
     "fields": {
         "label": "Full name",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "suggestion",
+    "fields": {
+        "label": "Suggestion",
+        "hint": "",
+        "inputtype": "textarea",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "what-went-wrong",
+    "fields": {
+        "label": "What went wrong",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "wrong",
+    "fields": {
+        "label": "What went wrong",
         "hint": "",
         "inputtype": "text",
         "datatype": "string",

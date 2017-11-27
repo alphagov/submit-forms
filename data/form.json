@@ -6,7 +6,33 @@
         "heading": "Simple",
         "description": "A simple example form",
         "phase": "alpha",
-        "reference": "EXAMPLE-1",
+        "reference": "",
+        "organisations": [
+            "government-organisation:OT1056"
+        ]
+    }
+},
+{
+    "model": "forms.form",
+    "pk": 2,
+    "fields": {
+        "heading": "Feedback",
+        "description": "",
+        "phase": "alpha",
+        "reference": "",
+        "organisations": [
+            "government-organisation:OT1056"
+        ]
+    }
+},
+{
+    "model": "forms.form",
+    "pk": 3,
+    "fields": {
+        "heading": "Service manual feedback",
+        "description": "The feedback form appearing at the bottom of each page on the service manual, for example on https://www.gov.uk/service-manual/design/addresses",
+        "phase": "alpha",
+        "reference": "",
         "organisations": [
             "government-organisation:OT1056"
         ]

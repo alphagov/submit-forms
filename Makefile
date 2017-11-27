@@ -19,14 +19,14 @@ load:	data/organisation.tsv
 	python3 manage.py load phase
 	python3 manage.py load datatype
 	python3 manage.py load inputtype
-	python3 manage.py loaddata < data/list.json
-	python3 manage.py loaddata < data/field.json
-	python3 manage.py loaddata < data/question.json
-	python3 manage.py loaddata < data/question-field.json
-	python3 manage.py loaddata < data/section.json
-	python3 manage.py loaddata < data/section-question.json
-	python3 manage.py loaddata < data/form.json
-	python3 manage.py loaddata < data/form-section.json
+	python3 manage.py loaddata data/list.json
+	python3 manage.py loaddata data/field.json
+	python3 manage.py loaddata data/question.json
+	python3 manage.py loaddata data/question-field.json
+	python3 manage.py loaddata data/section.json
+	python3 manage.py loaddata data/section-question.json
+	python3 manage.py loaddata data/form.json
+	python3 manage.py loaddata data/form-section.json
 
 save:
 	python3 manage.py dumpdata --indent 4 forms.List forms.Item > data/list.json

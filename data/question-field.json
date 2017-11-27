@@ -5,7 +5,7 @@
     "fields": {
         "question": 2,
         "field": "email",
-        "order": 0
+        "number": 0
     }
 },
 {
@@ -14,7 +14,34 @@
     "fields": {
         "question": 1,
         "field": "name",
-        "order": 0
+        "number": 0
+    }
+},
+{
+    "model": "forms.questionfield",
+    "pk": 3,
+    "fields": {
+        "question": 3,
+        "field": "doing",
+        "number": 0
+    }
+},
+{
+    "model": "forms.questionfield",
+    "pk": 4,
+    "fields": {
+        "question": 4,
+        "field": "what-went-wrong",
+        "number": 0
+    }
+},
+{
+    "model": "forms.questionfield",
+    "pk": 5,
+    "fields": {
+        "question": 5,
+        "field": "suggestion",
+        "number": 0
     }
 }
 ]
