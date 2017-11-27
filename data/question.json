@@ -48,5 +48,15 @@
         "warning": "",
         "detail": ""
     }
+},
+{
+    "model": "forms.question",
+    "pk": 6,
+    "fields": {
+        "heading": "What is your gender?",
+        "guidance": "",
+        "warning": "",
+        "detail": ""
+    }
 }
 ]

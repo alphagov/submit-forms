@@ -43,5 +43,14 @@
         "field": "suggestion",
         "number": 0
     }
+},
+{
+    "model": "forms.questionfield",
+    "pk": 6,
+    "fields": {
+        "question": 6,
+        "field": "gender",
+        "number": 0
+    }
 }
 ]

@@ -47,6 +47,9 @@ class List(models.Model):
     datatype = models.ForeignKey(DataType)
     items = models.ManyToManyField(Item, through='ListItem')
 
+    def __str__(self):
+        return self.name
+
 
 class ListItem(models.Model):
     _list = models.ForeignKey(List)

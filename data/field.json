@@ -37,6 +37,20 @@
 },
 {
     "model": "forms.field",
+    "pk": "gender",
+    "fields": {
+        "label": "Gender",
+        "hint": "",
+        "inputtype": "radio",
+        "datatype": "string",
+        "whitelists": [
+            1
+        ],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
     "pk": "happened",
     "fields": {
         "label": "What happened",
