@@ -1,10 +1,11 @@
 dj-database-url==0.4.2
 Django==1.11.1
+django-http-proxy==0.4.3
 gunicorn==19.7.1
-psycopg2==2.7.1
+natsort==5.0.3
+pkg-resources==0.0.0
+psycopg2==2.7.3.2
 pytz==2017.2
 requests==2.14.2
-whitenoise==3.3.0
 waitress==0.8.9
-django-http-proxy==0.4.3
-natsort==5.0.3
+whitenoise==3.3.0
