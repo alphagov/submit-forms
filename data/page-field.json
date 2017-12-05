@@ -1,63 +1,63 @@
 [
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 1,
     "fields": {
-        "question": 2,
+        "page": 2,
         "field": "email",
         "number": 0
     }
 },
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 2,
     "fields": {
-        "question": 1,
+        "page": 1,
         "field": "name",
         "number": 0
     }
 },
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 3,
     "fields": {
-        "question": 3,
+        "page": 3,
         "field": "doing",
         "number": 0
     }
 },
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 4,
     "fields": {
-        "question": 4,
+        "page": 4,
         "field": "what-went-wrong",
         "number": 0
     }
 },
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 5,
     "fields": {
-        "question": 5,
+        "page": 5,
         "field": "suggestion",
         "number": 0
     }
 },
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 6,
     "fields": {
-        "question": 6,
+        "page": 6,
         "field": "gender",
         "number": 0
     }
 },
 {
-    "model": "forms.questionfield",
+    "model": "forms.pagefield",
     "pk": 7,
     "fields": {
-        "question": 7,
+        "page": 7,
         "field": "waste-transported",
         "number": 0
     }

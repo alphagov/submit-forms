@@ -1,6 +1,6 @@
 [
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 1,
     "fields": {
         "heading": "What is your name?",
@@ -10,7 +10,7 @@
     }
 },
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 2,
     "fields": {
         "heading": "What is your email address?",
@@ -20,7 +20,7 @@
     }
 },
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 3,
     "fields": {
         "heading": "What you were doing?",
@@ -30,7 +30,7 @@
     }
 },
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 4,
     "fields": {
         "heading": "What went wrong?",
@@ -40,7 +40,7 @@
     }
 },
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 5,
     "fields": {
         "heading": "How should we improve this page?",
@@ -50,7 +50,7 @@
     }
 },
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 6,
     "fields": {
         "heading": "What is your gender?",
@@ -60,7 +60,7 @@
     }
 },
 {
-    "model": "forms.question",
+    "model": "forms.page",
     "pk": 7,
     "fields": {
         "heading": "Which types of waste do you transport regularly?",

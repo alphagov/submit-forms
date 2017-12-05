@@ -4,7 +4,7 @@ import io
 import os
 import csv
 
-from ...models import Organisation, Phase, DataType, InputType, Field, Question, Section, Form
+from ...models import Organisation, Phase, DataType, InputType, Field, Page, Section, Form
 
 from django.utils.dateparse import parse_datetime
 from django.core.exceptions import ObjectDoesNotExist
@@ -53,9 +53,9 @@ def load_field():
         o.save()
 
 
-def load_question():
-    for row in tsv_reader('question'):
-        o = Question(question=row['question'],
+def load_page():
+    for row in tsv_reader('page'):
+        o = Page(page=row['page'],
                        heading=row['heading'],
                        guidance=row['guidance'],
                        warning=row['warning'],
@@ -99,8 +99,8 @@ class Command(BaseCommand):
             load_inputtype()
         elif options['table'] == 'field':
             load_field()
-        elif options['table'] == 'question':
-            load_question()
+        elif options['table'] == 'page':
+            load_page()
         elif options['table'] == 'section':
             load_section()
         elif options['table'] == 'form':

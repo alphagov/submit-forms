@@ -23,26 +23,26 @@
     <p>{{ section.guidance }}</p>
     {% endif %}
 
-    {% for question in section.questions.all %}
+    {% for page in section.pages.all %}
       <div class="example">
-      <h3 class="heading-large"><span class="heading-secondary">Question <span class="number">{{question.number}}</span></span>{{ question.heading }}</h3>
+      <h3 class="heading-large"><span class="heading-secondary">Page <span class="number">{{page.number}}</span></span>{{ page.heading }}</h3>
 
-      {% if question.guidance %}
+      {% if page.guidance %}
       <h4 class="heading-small">Guidance</h4>
-      <p>{{ question.guidance }}</p>
+      <p>{{ page.guidance }}</p>
       {% endif %}
 
-      {% if question.warning %}
+      {% if page.warning %}
       <h4 class="heading-small">Warning</h4>
-      <p>{{ question.warning }}</p>
+      <p>{{ page.warning }}</p>
       {% endif %}
 
-      {% if question.detail %}
+      {% if page.detail %}
       <h4 class="heading-small">Detail</h4>
-      <p>{{ question.detail }}</p>
+      <p>{{ page.detail }}</p>
       {% endif %}
 
-      {% for field in question.fields.all %}
+      {% for field in page.fields.all %}
         <h4 class="heading-large"><span class="heading-secondary">Field <span class="number">{{field.number}}</span></span>{{ field.label }}</h4>
 
         {% if field.hint %}

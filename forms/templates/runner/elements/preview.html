@@ -23,27 +23,27 @@
     <p>{{ section.guidance }}</p>
     {% endif %}
 
-    {% for sectionquestion in section.sectionquestion_set.all %}
+    {% for sectionpage in section.sectionpage_set.all %}
 
     <div class="form-group">
       <fieldset>
           <legend>
-              <h1 class="heading-medium">{{ sectionquestion.question.heading }}</h1>
+              <h1 class="heading-medium">{{ sectionpage.page.heading }}</h1>
 
-              {% if sectionquestion.question.guidance %}
-              <span class="body-text">{{ sectionquestion.question.guidance }}</span>
+              {% if sectionpage.page.guidance %}
+              <span class="body-text">{{ sectionpage.page.guidance }}</span>
               {% endif %}
 
           </legend>
 
-      {% if sectionquestion.question.warning %}<p>{{ sectionquestion.question.warning }}</p>{% endif %}
+      {% if sectionpage.page.warning %}<p>{{ sectionpage.page.warning }}</p>{% endif %}
 
-      {% if sectionquestion.question.detail %}<p>{{ sectionquestion.question.detail }}</p>{% endif %}
+      {% if sectionpage.page.detail %}<p>{{ sectionpage.page.detail }}</p>{% endif %}
 
-      {% for field in sectionquestion.question.fields.all %}
+      {% for field in sectionpage.page.fields.all %}
 
         <label class="form-label" for="{{field.field}}">
-          {% if question.fields.count > 1 %}{{field.label}}{% endif %}
+          {% if page.fields.count > 1 %}{{field.label}}{% endif %}
           {% if field.hint %}<span class="form-hint">{{ field.hint }}</span>{% endif %}
         </label>
 

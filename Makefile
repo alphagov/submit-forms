@@ -23,10 +23,10 @@ load:	data/organisation.tsv
 	python3 manage.py loaddata data/item.json
 	python3 manage.py loaddata data/list-item.json
 	python3 manage.py loaddata data/field.json
-	python3 manage.py loaddata data/question.json
-	python3 manage.py loaddata data/question-field.json
+	python3 manage.py loaddata data/page.json
+	python3 manage.py loaddata data/page-field.json
 	python3 manage.py loaddata data/section.json
-	python3 manage.py loaddata data/section-question.json
+	python3 manage.py loaddata data/section-page.json
 	python3 manage.py loaddata data/form.json
 	python3 manage.py loaddata data/form-section.json
 
@@ -35,10 +35,10 @@ save:
 	python3 manage.py dumpdata --indent 4 forms.Item > data/item.json
 	python3 manage.py dumpdata --indent 4 forms.ListItem > data/list-item.json
 	python3 manage.py dumpdata --indent 4 forms.Field > data/field.json
-	python3 manage.py dumpdata --indent 4 forms.Question > data/question.json
-	python3 manage.py dumpdata --indent 4 forms.QuestionField > data/question-field.json
+	python3 manage.py dumpdata --indent 4 forms.Page > data/page.json
+	python3 manage.py dumpdata --indent 4 forms.PageField > data/page-field.json
 	python3 manage.py dumpdata --indent 4 forms.Section > data/section.json
-	python3 manage.py dumpdata --indent 4 forms.SectionQuestion > data/section-question.json
+	python3 manage.py dumpdata --indent 4 forms.SectionPage > data/section-page.json
 	python3 manage.py dumpdata --indent 4 forms.Form > data/form.json
 	python3 manage.py dumpdata --indent 4 forms.FormSection > data/form-section.json
 

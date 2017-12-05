@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Organisation, Phase, DataType, InputType, List, ListItem, Item, Field, Question, Section, Form, QuestionField, FormSection, SectionQuestion
+from .models import Organisation, Phase, DataType, InputType, List, ListItem, Item, Field, Page, Section, Form, PageField, FormSection, SectionPage
 
 
 
@@ -39,15 +39,15 @@ class InputTypeAdmin(admin.ModelAdmin):
     inlines = (ListItemInline,)
 
 
-class QuestionFieldInline(admin.TabularInline):
-    model = QuestionField
+class PageFieldInline(admin.TabularInline):
+    model = PageField
     extra = 1
 
 
-@admin.register(Question)
-class QuestionAdmin(admin.ModelAdmin):
-    list_display = ['question', 'heading']
-    inlines = (QuestionFieldInline,)
+@admin.register(Page)
+class PageAdmin(admin.ModelAdmin):
+    list_display = ['page', 'heading']
+    inlines = (PageFieldInline,)
 
 
 @admin.register(Field)
@@ -55,15 +55,15 @@ class FieldAdmin(admin.ModelAdmin):
     list_display = ['field', 'label', 'inputtype', 'datatype']
 
 
-class SectionQuestionInline(admin.TabularInline):
-    model = SectionQuestion
+class SectionPageInline(admin.TabularInline):
+    model = SectionPage
     extra = 1
 
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
     list_display = ['section', 'heading']
-    inlines = (SectionQuestionInline,)
+    inlines = (SectionPageInline,)
 
 
 class FormSectionInline(admin.TabularInline):

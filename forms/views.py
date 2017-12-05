@@ -24,7 +24,7 @@ def home(request):
 def forms(request):
     forms = Form.objects \
         .annotate(n_sections=Count('sections', distinct=True)) \
-        .annotate(n_questions=Count('sections__questions', distinct=True))
+        .annotate(n_pages=Count('sections__pages', distinct=True))
     return render(request, 'forms.html', {'forms': forms})
 
 

@@ -73,20 +73,20 @@ class Field(models.Model):
         return self.field
 
 
-class Question(models.Model):
-    question = models.AutoField(primary_key=True)
+class Page(models.Model):
+    page = models.AutoField(primary_key=True)
     heading = models.TextField(blank=True, default='')
     guidance = models.TextField(blank=True, default='')
     warning = models.TextField(blank=True, default='')
     detail = models.TextField(blank=True, default='')
-    fields = models.ManyToManyField(Field, through='QuestionField')
+    fields = models.ManyToManyField(Field, through='PageField')
 
     def __str__(self):
         return self.heading
 
 
-class QuestionField(models.Model):
-    question = models.ForeignKey(Question)
+class PageField(models.Model):
+    page = models.ForeignKey(Page)
     field = models.ForeignKey(Field)
     number = models.PositiveIntegerField()
 
@@ -98,15 +98,15 @@ class Section(models.Model):
     section = models.AutoField(primary_key=True)
     heading = models.TextField(blank=True, default='')
     guidance = models.TextField(blank=True, default='')
-    questions = models.ManyToManyField(Question, through='SectionQuestion')
+    pages = models.ManyToManyField(Page, through='SectionPage')
 
     def __str__(self):
         return self.heading
 
 
-class SectionQuestion(models.Model):
+class SectionPage(models.Model):
     section = models.ForeignKey(Section)
-    question = models.ForeignKey(Question)
+    page = models.ForeignKey(Page)
     number = models.PositiveIntegerField()
 
     class Meta:
