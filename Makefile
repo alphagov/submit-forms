@@ -57,3 +57,6 @@ data/organisation.tsv:	bin/organisations.py
 
 model.svg:	forms/models.py
 	python3 manage.py graph_models forms -g -o $@
+
+model.pdf:	model.svg
+	rsvg-convert -f pdf -o model.pdf model.svg
