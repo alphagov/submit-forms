@@ -3,6 +3,7 @@
     "model": "forms.page",
     "pk": 1,
     "fields": {
+        "pagetype": "question",
         "heading": "What is your name?",
         "guidance": "",
         "warning": "",
@@ -13,6 +14,7 @@
     "model": "forms.page",
     "pk": 2,
     "fields": {
+        "pagetype": "question",
         "heading": "What is your email address?",
         "guidance": "",
         "warning": "",
@@ -23,6 +25,7 @@
     "model": "forms.page",
     "pk": 3,
     "fields": {
+        "pagetype": "question",
         "heading": "What you were doing?",
         "guidance": "",
         "warning": "",
@@ -33,6 +36,7 @@
     "model": "forms.page",
     "pk": 4,
     "fields": {
+        "pagetype": "question",
         "heading": "What went wrong?",
         "guidance": "",
         "warning": "",
@@ -43,6 +47,7 @@
     "model": "forms.page",
     "pk": 5,
     "fields": {
+        "pagetype": "question",
         "heading": "How should we improve this page?",
         "guidance": "",
         "warning": "",
@@ -53,6 +58,7 @@
     "model": "forms.page",
     "pk": 6,
     "fields": {
+        "pagetype": "question",
         "heading": "What is your gender?",
         "guidance": "",
         "warning": "",
@@ -63,6 +69,7 @@
     "model": "forms.page",
     "pk": 7,
     "fields": {
+        "pagetype": "question",
         "heading": "Which types of waste do you transport regularly?",
         "guidance": "",
         "warning": "",

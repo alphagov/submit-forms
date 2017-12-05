@@ -46,7 +46,7 @@ class PageFieldInline(admin.TabularInline):
 
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):
-    list_display = ['page', 'heading']
+    list_display = ['page', 'pagetype', 'heading']
     inlines = (PageFieldInline,)
 
 

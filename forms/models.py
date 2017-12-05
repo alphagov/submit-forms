@@ -28,9 +28,18 @@ class DataType(models.Model):
 
 class InputType(models.Model):
     inputtype = models.CharField(max_length=256, blank=True, default='', primary_key=True)
+    description = models.TextField(blank=True, default='')
 
     def __str__(self):
         return self.inputtype
+
+
+class PageType(models.Model):
+    pagetype = models.CharField(max_length=256, blank=True, default='', primary_key=True)
+    description = models.TextField(blank=True, default='')
+
+    def __str__(self):
+        return self.pagetype
 
 
 class Item(models.Model):
@@ -75,6 +84,7 @@ class Field(models.Model):
 
 class Page(models.Model):
     page = models.AutoField(primary_key=True)
+    pagetype = models.ForeignKey(PageType, default='question')
     heading = models.TextField(blank=True, default='')
     guidance = models.TextField(blank=True, default='')
     warning = models.TextField(blank=True, default='')

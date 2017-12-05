@@ -4,7 +4,7 @@ import io
 import os
 import csv
 
-from ...models import Organisation, Phase, DataType, InputType, Field, Page, Section, Form
+from ...models import Organisation, Phase, DataType, InputType, PageType, Field, Page, Section, Form
 
 from django.utils.dateparse import parse_datetime
 from django.core.exceptions import ObjectDoesNotExist
@@ -33,13 +33,19 @@ def load_phase():
 
 def load_datatype():
     for row in tsv_reader('datatype'):
-        o = DataType(datatype=row['datatype'])
+        o = DataType(datatype=row['datatype'], description=row['description'])
         o.save()
 
 
 def load_inputtype():
     for row in tsv_reader('inputtype'):
-        o = InputType(inputtype=row['inputtype'])
+        o = InputType(inputtype=row['inputtype'], description=row['description'])
+        o.save()
+
+
+def load_pagetype():
+    for row in tsv_reader('pagetype'):
+        o = PageType(pagetype=row['pagetype'], description=row['description'])
         o.save()
 
 
@@ -97,6 +103,8 @@ class Command(BaseCommand):
             load_datatype()
         elif options['table'] == 'inputtype':
             load_inputtype()
+        elif options['table'] == 'pagetype':
+            load_pagetype()
         elif options['table'] == 'field':
             load_field()
         elif options['table'] == 'page':
@@ -106,4 +114,4 @@ class Command(BaseCommand):
         elif options['table'] == 'form':
             load_form()
         else:
-            raise ValueError('Unknown table', options['table'])
+            raise ValueError('No loader for ', options['table'])

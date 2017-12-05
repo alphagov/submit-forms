@@ -19,6 +19,7 @@ load:	data/organisation.tsv
 	python3 manage.py load phase
 	python3 manage.py load datatype
 	python3 manage.py load inputtype
+	python3 manage.py load pagetype
 	python3 manage.py loaddata data/list.json
 	python3 manage.py loaddata data/item.json
 	python3 manage.py loaddata data/list-item.json
