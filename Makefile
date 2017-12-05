@@ -11,7 +11,7 @@ init:
 static:
 	python3 manage.py collectstatic --noinput --clear
 
-migrate:
+migrate:	diagram
 	python3 manage.py makemigrations forms && python3 manage.py migrate
 
 load:	data/organisation.tsv
@@ -54,3 +54,7 @@ data/organisation.tsv:	bin/organisations.py
 	@mkdir -p cache/page
 	python3 bin/organisations.py > $@
 
+diagram:	dot/model.png
+
+dot/model.png:	forms/models.py
+	python3 manage.py graph_models forms -g -o $@

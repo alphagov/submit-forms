@@ -1,11 +1,16 @@
 dj-database-url==0.4.2
 Django==1.11.1
+django-extensions==1.9.8
 django-http-proxy==0.4.3
 gunicorn==19.7.1
 natsort==5.0.3
 pkg-resources==0.0.0
 psycopg2==2.7.3.2
+pydot==1.2.3
+pyparsing==2.2.0
 pytz==2017.2
 requests==2.14.2
+six==1.11.0
+typing==3.6.2
 waitress==0.8.9
 whitenoise==3.3.0
