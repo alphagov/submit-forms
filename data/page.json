@@ -75,5 +75,38 @@
         "warning": "",
         "detail": ""
     }
+},
+{
+    "model": "forms.page",
+    "pk": 8,
+    "fields": {
+        "pagetype": "question",
+        "heading": "What is the vehicle's registration number?",
+        "guidance": "",
+        "warning": "",
+        "detail": ""
+    }
+},
+{
+    "model": "forms.page",
+    "pk": 9,
+    "fields": {
+        "pagetype": "question",
+        "heading": "Is this a new registration?",
+        "guidance": "",
+        "warning": "",
+        "detail": ""
+    }
+},
+{
+    "model": "forms.page",
+    "pk": 10,
+    "fields": {
+        "pagetype": "question",
+        "heading": "Do you only deal with the following waste?",
+        "guidance": "* animal by-products\r\n* waste from a mine or quarry\r\n* farm or agricultural waste",
+        "warning": "",
+        "detail": ""
+    }
 }
 ]

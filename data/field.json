@@ -75,6 +75,20 @@
 },
 {
     "model": "forms.field",
+    "pk": "new-registration",
+    "fields": {
+        "label": "Is this a new registration?",
+        "hint": "",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [
+            3
+        ],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
     "pk": "suggestion",
     "fields": {
         "label": "Suggestion",
@@ -82,6 +96,32 @@
         "inputtype": "textarea",
         "datatype": "string",
         "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "vehicle-registration",
+    "fields": {
+        "label": "Registration number (number plate)",
+        "hint": "For example, CU57ABC",
+        "inputtype": "text",
+        "datatype": "string",
+        "whitelists": [],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "waste-exclusion-type",
+    "fields": {
+        "label": "Types of waste",
+        "hint": "",
+        "inputtype": "radio",
+        "datatype": "string",
+        "whitelists": [
+            4
+        ],
         "blacklists": []
     }
 },

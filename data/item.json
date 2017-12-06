@@ -54,5 +54,37 @@
         "label": "Waste from animal carcasses",
         "value": "A"
     }
+},
+{
+    "model": "forms.item",
+    "pk": 8,
+    "fields": {
+        "label": "Yes",
+        "value": "y"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 9,
+    "fields": {
+        "label": "No, I want to renew an existing registration",
+        "value": "n"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 10,
+    "fields": {
+        "label": "Yes",
+        "value": "y"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 11,
+    "fields": {
+        "label": "No",
+        "value": "n"
+    }
 }
 ]

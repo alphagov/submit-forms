@@ -73,5 +73,5 @@ class FormSectionInline(admin.TabularInline):
 
 @admin.register(Form)
 class FormAdmin(admin.ModelAdmin):
-    list_display = ['form', 'heading', 'phase', 'reference']
+    list_display = ['form', 'heading', 'phase', 'reference', 'description']
     inlines = (FormSectionInline,)

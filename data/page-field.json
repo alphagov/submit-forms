@@ -61,5 +61,32 @@
         "field": "waste-transported",
         "number": 0
     }
+},
+{
+    "model": "forms.pagefield",
+    "pk": 8,
+    "fields": {
+        "page": 8,
+        "field": "vehicle-registration",
+        "number": 0
+    }
+},
+{
+    "model": "forms.pagefield",
+    "pk": 9,
+    "fields": {
+        "page": 9,
+        "field": "new-registration",
+        "number": 0
+    }
+},
+{
+    "model": "forms.pagefield",
+    "pk": 10,
+    "fields": {
+        "page": 10,
+        "field": "waste-exclusion-type",
+        "number": 0
+    }
 }
 ]

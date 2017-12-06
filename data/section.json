@@ -30,5 +30,13 @@
         "heading": "Waste transportation",
         "guidance": ""
     }
+},
+{
+    "model": "forms.section",
+    "pk": 5,
+    "fields": {
+        "heading": "Register as a waste carrier",
+        "guidance": ""
+    }
 }
 ]

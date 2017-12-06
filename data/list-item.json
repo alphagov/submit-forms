@@ -52,5 +52,41 @@
         "item": 7,
         "number": 0
     }
+},
+{
+    "model": "forms.listitem",
+    "pk": 7,
+    "fields": {
+        "_list": 3,
+        "item": 8,
+        "number": 0
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 8,
+    "fields": {
+        "_list": 3,
+        "item": 9,
+        "number": 1
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 9,
+    "fields": {
+        "_list": 4,
+        "item": 10,
+        "number": 0
+    }
+},
+{
+    "model": "forms.listitem",
+    "pk": 10,
+    "fields": {
+        "_list": 4,
+        "item": 11,
+        "number": 1
+    }
 }
 ]

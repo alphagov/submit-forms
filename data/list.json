@@ -16,5 +16,23 @@
         "description": "Types of waste transported regularly",
         "datatype": "string"
     }
+},
+{
+    "model": "forms.list",
+    "pk": 3,
+    "fields": {
+        "name": "new-registration",
+        "description": "",
+        "datatype": "string"
+    }
+},
+{
+    "model": "forms.list",
+    "pk": 4,
+    "fields": {
+        "name": "Yes/No",
+        "description": "",
+        "datatype": "string"
+    }
 }
 ]

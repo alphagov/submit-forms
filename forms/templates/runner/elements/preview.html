@@ -1,6 +1,7 @@
 {% extends "runner/base.html" %}
 {% load staticfiles %}
 {% block header_class %}with-proposition{% endblock %}
+{% load markdown %}
 
 {% block proposition_header %}
 <div class='header-proposition'>
@@ -20,7 +21,7 @@
     <h2 class="heading-large">{{ section.heading }}</h2>
 
     {% if section.guidance %}
-    <p>{{ section.guidance }}</p>
+    <div class="guidance markdown">{{ section.guidance|markdownify|safe }}</div>
     {% endif %}
 
     {% for sectionpage in section.sectionpage_set.all %}
@@ -31,7 +32,7 @@
               <h1 class="heading-medium">{{ sectionpage.page.heading }}</h1>
 
               {% if sectionpage.page.guidance %}
-              <span class="body-text">{{ sectionpage.page.guidance }}</span>
+              <div class="body-text markdown">{{ sectionpage.page.guidance|markdownify|safe }}</div>
               {% endif %}
 
           </legend>
