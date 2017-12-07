@@ -22,11 +22,8 @@
     <a href='#proposition-links' class='js-header-toggle menu'>Menu</a>
     <nav id='proposition-menu'>
       <ul id='proposition-links'>
-        <li><a href="/organisations"{% block organisations_active %}{% endblock %}>Organisations</a>
         <li><a href="/forms"{% block forms_active %}{% endblock %}>Forms</a>
         <li><a href="/pages"{% block pages_active %}{% endblock %}>Pages</a>
-        <li><a href="/fields"{% block fields_active %}{% endblock %}>Fields</a>
-        <li><a href="/inputtypes"{% block inputtypes_active %}{% endblock %}>Input types</a>
       </ul>
     </nav>
   </div>
@@ -82,8 +79,7 @@ $(function () {
 
 {% block footer_support_links %}
     <ul>
-    <li>This site has been built using <a href="https://github.com/openregister/government-form-data">open source</a> code on
-    <a href="https://github.com/openregister/government-form-explorer">open data</a>.</li>
+    <li>This a prototype is being developed as <a href="https://github.com/alphagov/submit-forms">open source</a> software.
     </ul>
 </p>
 {% endblock %}
