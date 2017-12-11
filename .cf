@@ -1,0 +1,4 @@
+export DEPS_DIR=/home/vcap/deps
+export HOME=/home/vcap/app
+[ -d ~/.profile.d ] && for f in ~/.profile.d/*; do source $f; done
+[ -f ~/.profile ] && source ~/.profile
