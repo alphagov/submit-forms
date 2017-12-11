@@ -24,4 +24,39 @@
     </ol> 
   {% endif %}
 
+  {% if page %}
+    <ol>
+        <li><a href="/pages">Pages</a></li>
+        <li><a href="/page/{{ page.page }}/">{{ page.page }}</a></li>
+    </ol> 
+  {% endif %}
+
+  {% if pagetype %}
+    <ol>
+        <li><a href="/pagetypes">Page types</a></li>
+        <li><a href="/pagetype/{{ pagetype.pagetype }}/">{{ pagetype.pagetype }}</a></li>
+    </ol> 
+  {% endif %}
+
+  {% if inputtype %}
+    <ol>
+        <li><a href="/inputtypes">Input types</a></li>
+        <li><a href="/inputtype/{{ inputtype.inputtype }}/">{{ inputtype.inputtype }}</a></li>
+    </ol> 
+  {% endif %}
+
+  {% if datatype %}
+    <ol>
+        <li><a href="/datatypes">Data types</a></li>
+        <li><a href="/datatype/{{ datatype.datatype }}/">{{ datatype.datatype }}</a></li>
+    </ol> 
+  {% endif %}
+
+  {% if l %}
+    <ol>
+        <li><a href="/lists">Lists</a></li>
+        <li><a href="/list/{{ l.id }}/">{{ l.id }}</a></li>
+    </ol> 
+  {% endif %}
+
   </div>
