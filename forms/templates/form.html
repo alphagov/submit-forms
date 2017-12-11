@@ -16,69 +16,7 @@
   <p>{{ form.description }}</p>
 
   {% for section in form.sections.all %}
-    <h2 class="heading-large"><span class="heading-secondary">Section <span class="number">{{section.number}}</span></span> {{ section.heading }}</h2>
-
-    {% if section.guidance %}
-    <h4 class="heading-small">Guidance</h4>
-    <p>{{ section.guidance }}</p>
-    {% endif %}
-
-    {% for page in section.pages.all %}
-      <div class="example">
-      <h3 class="heading-large"><span class="heading-secondary">Page <span class="number">{{page.number}}</span></span>{{ page.heading }}</h3>
-
-      {% if page.guidance %}
-      <h4 class="heading-small">Guidance</h4>
-      <p>{{ page.guidance }}</p>
-      {% endif %}
-
-      {% if page.warning %}
-      <h4 class="heading-small">Warning</h4>
-      <p>{{ page.warning }}</p>
-      {% endif %}
-
-      {% if page.detail %}
-      <h4 class="heading-small">Detail</h4>
-      <p>{{ page.detail }}</p>
-      {% endif %}
-
-      {% for field in page.fields.all %}
-        <h4 class="heading-large"><span class="heading-secondary">Field <span class="number">{{field.number}}</span></span>{{ field.label }}</h4>
-
-        {% if field.hint %}
-        <h5 class="heading-small">Hint</h5>
-        <p>{{ field.hint }}</p>
-        {% endif %}
-
-        <h5 class="heading-small">Input type</h5>
-        <p>{{ field.inputtype }}</p>
-
-        <h5 class="heading-small">Data type</h5>
-        <p>{{ field.datatype }}</p>
-
-        {% if field.whitelists.all %}
-          <h5 class="heading-small">Whitelists</h5>
-          {% for list in field.whitelists.all %}
-            <p>{{ list.name }}</p>
-            <p>{{ list.description }}</p>
-            <p>{{ list.datatype }}</p>
-          {% endfor %}
-        {% endif %}
-
-        {% if field.blacklists.all %}
-          <h5 class="heading-small">Blacklists</h5>
-          {% for list in field.blacklists.all %}
-            <p>{{ list.name }}</p>
-            <p>{{ list.description }}</p>
-            <p>{{ list.datatype }}</p>
-          {% endfor %}
-        {% endif %}
-
-      {% endfor %}
-      </div>
-
-    {% endfor %}
-
+    {% include '_section.html' %}
   {% endfor %}
 
   <h2 class="heading-medium">Preview this form</h2>

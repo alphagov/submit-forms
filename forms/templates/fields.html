@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block fields_active %} class="active"{% endblock %}
+{% block content %}
+<div class="grid-row">
+  <div class="column-full">
+   {% include '_breadcrumbs.html' %}
+  </div>
+</div>
+
+<div class="grid-row">
+  <div class="column-full">
+    {% include "_fields.html" %}
+  </div>
+</div>
+
+{% endblock %}

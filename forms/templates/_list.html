@@ -1,0 +1,17 @@
+  <h5 class="heading-small">List</h5>
+  <p><a href="/field/{{l.id}}">{{ l.id }}</a></p>
+
+  <h5 class="heading-small">Name</h5>
+  <p>{{ l.name }}</p>
+
+  <h5 class="heading-small">Datatype</h5>
+  <p>{{ l.datatype }}</p>
+
+  <h5 class="heading-small">Description</h5>
+  <p>{{ l.description }}</p>
+
+  {% if l.items.all %}
+    <h5 class="heading-small">Items</h5>
+    {% include "_items.html" with items=l.items.all %}
+  {% endif %}
+

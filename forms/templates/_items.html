@@ -1,0 +1,18 @@
+<table class="items">
+<thead>
+<tr>
+  <th scope="col">Label</th>
+  <th scope="col">Value</th>
+</tr>
+</thead>
+<tbody>
+
+{% for item in items %}
+    <tr>
+      <td>{{ item.label }}</td>
+      <td>{{ item.value }}</td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>

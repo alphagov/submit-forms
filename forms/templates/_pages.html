@@ -1,0 +1,20 @@
+<table class="pages">
+<thead>
+<tr>
+  <th scope="col">Page</th>
+  <th scope="col">Type</th>
+  <th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+
+{% for page in pages %}
+    <tr>
+      <td><a href="/page/{{ page.page }}/">{{ page.heading }}</a></td>
+      <td>{{ page.pagetype }}</td>
+      <td>{{ page.description }}</td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>

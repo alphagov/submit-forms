@@ -1,0 +1,15 @@
+<h2 class="heading-large"><span class="heading-secondary">Section <span class="number">{{section.number}}</span></span> {{ section.heading }}</h2>
+
+{% if section.description %}
+<h4 class="heading-small">Description</h4>
+<pre>{{ section.description }}</pre>
+{% endif %}
+
+{% if section.guidance %}
+<h4 class="heading-small">Guidance</h4>
+<p>{{ section.guidance }}</p>
+{% endif %}
+
+{% for page in section.pages.all %}
+{% include "_page.html" %}
+{% endfor %}

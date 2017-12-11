@@ -1,0 +1,20 @@
+{% extends "runner/base.html" %}
+{% load staticfiles %}
+{% block header_class %}with-proposition{% endblock %}
+
+{% block proposition_header %}
+<div class='header-proposition'>
+  <div class='content'>
+    <nav id='proposition-menu'>
+      <a href="/form/{{form.form}}" id="proposition-name">{{ form.heading }}</a>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% include "runner/elements/_page.html" %}
+
+
+{% endblock %}

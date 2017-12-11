@@ -1,0 +1,39 @@
+<div class="example">
+<h3 class="heading-large"><span class="heading-secondary">Page <span class="number">{{page.number}}</span></span>{{ page.heading }}</h3>
+
+<h4 class="heading-small">Page type</h4>
+<p><a href="/pagetype/{{ page.pagetype }}">{{ page.pagetype }}</a></p>
+
+{% if page.description %}
+<h4 class="heading-small">Description</h4>
+<pre>{{ page.description }}</pre>
+{% endif %}
+
+{% if page.guidance %}
+<h4 class="heading-small">Guidance</h4>
+<pre>{{ page.guidance }}</pre>
+{% endif %}
+
+{% if page.warning %}
+<h4 class="heading-small">Warning</h4>
+<pre>{{ page.warning }}</pre>
+{% endif %}
+
+{% if page.detail %}
+<h4 class="heading-small">Detail</h4>
+<p>{{ page.detail }}</p>
+{% endif %}
+
+{% for field in page.fields.all %}
+{% include "_field.html" %}
+{% endfor %}
+
+<h2 class="heading-medium">Preview this page</h2>
+
+<ul class="list list-bullet">
+  {% for runner, r in runners.items %}
+    <li>as <a href="/page/{{ page.page }}/preview/{{ runner }}">{{ r.media }}</a> using <a href="{{ r.url }}">{{ r.name }}</a></li>
+  {% endfor %}
+</ul>
+
+</div>

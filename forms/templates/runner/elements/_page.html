@@ -1,0 +1,58 @@
+{% load markdown %}
+
+    <div class="form-group">
+      <fieldset>
+          <legend>
+              <h1 class="heading-medium">{{ page.heading }}</h1>
+
+              {% if page.guidance %}
+              <div class="body-text markdown">{{ page.guidance|markdownify|safe }}</div>
+              {% endif %}
+
+          </legend>
+
+      {% if page.warning %}<p>{{ page.warning }}</p>{% endif %}
+
+      {% if page.detail %}<p>{{ page.detail }}</p>{% endif %}
+
+      {% for field in page.fields.all %}
+
+        <label class="form-label" for="{{field.field}}">
+          {% if page.fields.count > 1 %}{{field.label}}{% endif %}
+          {% if field.hint %}<span class="form-hint">{{ field.hint }}</span>{% endif %}
+        </label>
+
+        {% if field.inputtype|stringformat:"s" == 'text' %}
+
+        <input class="form-control" id="{{field.field}}" type="text" name="{{field.field}}">
+
+        {% elif field.inputtype|stringformat:"s" == 'textarea' %}
+
+        <textarea class="form-control form-control-3-4" name="{{field.field}}" rows="5"></textarea>
+
+        {% elif field.inputtype|stringformat:"s" == 'radio' %}
+
+          {% for list in field.whitelists.all %}
+            {% for item in list.items.all %}
+            <div class="multiple-choice">
+                <input id="{{ field.field }}-radio-{{ forloop.revcounter }}" type="radio" name="radio-group" value="{{ item.value }}">
+                <label for="{{ field.field }}-radio-{{ forloop.revcounter }}">{{ item.label }}</label>
+            </div>
+            {% if not forloop.last %}{% ifequal forloop.revcounter 2 %}<p class="form-block">or</p>{% endifequal %}{% else %}{% endif %}
+            {% endfor %}
+          {% endfor %}
+
+        {% elif field.inputtype|stringformat:"s" == 'checkbox' %}
+
+          {% for list in field.whitelists.all %}
+            {% for item in list.items.all %}
+            <div class="multiple-choice">
+                <input id="{{ field.field }}--{{ forloop.revcounter }}" type="checkbox" name="radio-group" value="{{ item.value }}">
+                <label for="{{ field.field }}--{{ forloop.revcounter }}">{{ item.label }}</label>
+            </div>
+            {% endfor %}
+          {% endfor %}
+
+        {% endif %}
+
+      {% endfor %}

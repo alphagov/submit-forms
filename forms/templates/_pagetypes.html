@@ -1,0 +1,18 @@
+<table class="pagetypes">
+<thead>
+<tr>
+  <th scope="col">Page Type</th>
+  <th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+
+{% for pagetype in pagetypes %}
+    <tr>
+      <td><a href="/pagetype/{{ pagetype.pagetype }}">{{ pagetype.pagetype }}</a></td>
+      <td>{{ page.description }}</td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>

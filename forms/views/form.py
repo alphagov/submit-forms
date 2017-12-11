@@ -1,24 +1,9 @@
 from django.shortcuts import render
-from django.contrib import admin
 from django.db.models import Count
 from django.http import Http404
 
-from .models import Organisation, Form
-
-admin.autodiscover()
-
-# TBD: plugin architecture / separate runner application ..
-runners = {
-    'elements': {
-        'name': 'GOV.UK form elements',
-        'url': 'http://govuk-elements.herokuapp.com/form-elements/',
-        'media': 'a single web page',
-    }
-}
-
-
-def home(request):
-    return render(request, 'home.html')
+from ..models import Organisation, Form
+from ..runner import runners
 
 
 def forms(request):
@@ -40,7 +25,7 @@ def form(request, key=None, template='form.html'):
     })
 
 
-def preview(request, key=None, runner=None):
+def form_preview(request, key=None, runner=None):
     if runner not in runners:
         raise Http404("Not found")
     template = 'runner/%s/preview.html' % (runner)

@@ -2,6 +2,7 @@
 <thead>
 <tr>
   <th scope="col">Form</th>
+  <th scope="col">Description</th>
   <th scope="col" class="numeric">Sections</th>
   <th scope="col" class="numeric">Pages</th>
 </tr>
@@ -11,6 +12,7 @@
 {% for form in forms %}
     <tr>
       <td><a href="/form/{{ form.form }}/">{{ form.heading }}</a></td>
+      <td>{{ page.description }}</td>
       <td class="numeric">{{ form.n_sections }}</td>
       <td class="numeric">{{ form.n_pages }}</td>
     </tr>

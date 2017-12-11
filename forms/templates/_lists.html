@@ -1,0 +1,22 @@
+<table class="lists">
+<thead>
+<tr>
+  <th scope="col">List</th>
+  <th scope="col">Datatype</th>
+  <th scope="col">Description</th>
+  <th scope="col" class="numeric">Items</th>
+</tr>
+</thead>
+<tbody>
+
+{% for list in lists %}
+    <tr>
+      <td><a href="/list/{{ list.id }}/">{{ list.name }}</a></td>
+      <td><a href="/datatype/{{ list.datatype }}">{{ list.datatype }}</a></td>
+      <td>{{ list.description }}</td>
+      <td class="numeric">{{ list.n_items }}</td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>

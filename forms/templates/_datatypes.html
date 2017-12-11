@@ -1,0 +1,18 @@
+<table class="datatypes">
+<thead>
+<tr>
+  <th scope="col">Data Type</th>
+  <th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+
+{% for datatype in datatypes %}
+    <tr>
+      <td><a href="/datatype/{{ datatype.datatype }}">{{ datatype.datatype }}</a></td>
+      <td>{{ page.description }}</td>
+    </tr>
+{% endfor %}
+
+</tbody>
+</table>

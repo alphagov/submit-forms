@@ -85,6 +85,7 @@ class Field(models.Model):
 class Page(models.Model):
     page = models.AutoField(primary_key=True)
     pagetype = models.ForeignKey(PageType, default='question')
+    description = models.TextField(blank=True, default='')
     heading = models.TextField(blank=True, default='')
     guidance = models.TextField(blank=True, default='')
     warning = models.TextField(blank=True, default='')

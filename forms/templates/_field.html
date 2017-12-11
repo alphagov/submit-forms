@@ -1,0 +1,26 @@
+  <h5 class="heading-small">Field</h5>
+  <p><a href="/field/{{field.field}}">{{ field.field }}</a></p>
+
+  <h5 class="heading-small">Label</h5>
+  <p>{{ field.label }}</p>
+
+  {% if field.hint %}
+  <h5 class="heading-small">Hint</h5>
+  <p>{{ field.hint }}</p>
+  {% endif %}
+
+  <h5 class="heading-small">Input type</h5>
+  <p><a href="/inputtype/{{ field.inputtype }}">{{ field.inputtype }}</a></p>
+
+  <h5 class="heading-small">Data type</h5>
+  <p><a href="/datatype/{{ field.datatype }}">{{ field.datatype }}</a></p>
+
+  {% if field.whitelists.all %}
+    <h5 class="heading-small">Whitelists</h5>
+    {% include "_lists.html" with lists=field.whitelists.all %}
+  {% endif %}
+
+  {% if field.blacklists.all %}
+    <h5 class="heading-small">Blacklists</h5>
+    {% include "_lists.html" with lists=field.blacklists.all %}
+  {% endif %}
