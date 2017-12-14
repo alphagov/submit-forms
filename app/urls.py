@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^forms/$', forms.views.forms, name='forms'),
     url(r'^form/%s/$' % (key), forms.views.form, name='form'),
     url(r'^form/%s/preview/%s/$' % (key, runner), forms.views.form, name='form_preview'),
+    url(r'^form/%s.json$' % (key), forms.views.form_json, name='form_json'),
 
     url(r'^pages/$', forms.views.pages, name='pages'),
     url(r'^page/%s/$' % (key), forms.views.page, name='page'),
