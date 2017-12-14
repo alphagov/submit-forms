@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from ..models import List
-from ..runner import runners
 
 
 def lists(request):
@@ -14,5 +13,4 @@ def list_(request, key=None, template='list.html'):
 
     return render(request, template, {
         'l': l,
-        'runners': runners,
     })

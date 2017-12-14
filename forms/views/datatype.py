@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from ..models import DataType
-from ..runner import runners
 
 
 def datatypes(request):
@@ -14,5 +13,4 @@ def datatype(request, key=None, template='datatype.html'):
 
     return render(request, template, {
         'datatype': datatype,
-        'runners': runners,
     })

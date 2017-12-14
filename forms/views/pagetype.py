@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from ..models import PageType
-from ..runner import runners
 
 
 def pagetypes(request):
@@ -14,5 +13,4 @@ def pagetype(request, key=None, template='pagetype.html'):
 
     return render(request, template, {
         'pagetype': pagetype,
-        'runners': runners,
     })

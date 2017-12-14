@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from ..models import Field
-from ..runner import runners
 
 
 def fields(request):
@@ -14,5 +13,4 @@ def field(request, key=None, template='field.html'):
 
     return render(request, template, {
         'field': field,
-        'runners': runners,
     })

@@ -19,11 +19,11 @@ urlpatterns = [
 
     url(r'^forms/$', forms.views.forms, name='forms'),
     url(r'^form/%s/$' % (key), forms.views.form, name='form'),
-    url(r'^form/%s/preview/%s$' % (key, runner), forms.views.form_preview, name='form_preview'),
+    url(r'^form/%s/preview/%s/$' % (key, runner), forms.views.form, name='form_preview'),
 
     url(r'^pages/$', forms.views.pages, name='pages'),
     url(r'^page/%s/$' % (key), forms.views.page, name='page'),
-    url(r'^page/%s/preview/%s$' % (key, runner), forms.views.page_preview, name='page_preview'),
+    url(r'^page/%s/preview/%s/$' % (key, runner), forms.views.page, name='page_preview'),
 
     url(r'^fields/$', forms.views.fields, name='fields'),
     url(r'^field/%s/$' % (key), forms.views.field, name='field'),

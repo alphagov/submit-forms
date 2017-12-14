@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from ..models import InputType
-from ..runner import runners
 
 
 def inputtypes(request):
@@ -14,5 +13,4 @@ def inputtype(request, key=None, template='inputtype.html'):
 
     return render(request, template, {
         'inputtype': inputtype,
-        'runners': runners,
     })

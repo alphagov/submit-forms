@@ -21,10 +21,8 @@
 
   <h2 class="heading-medium">Preview this form</h2>
 
-  <ul class="list list-bullet">
-    {% for runner, r in runners.items %}
-      <li>as <a href="preview/{{ runner }}">{{ r.media }}</a> using <a href="{{ r.url }}">{{ r.name }}</a></li>
-    {% endfor %}
-  </ul>
+<ul class="list list-bullet">
+    <li>as a <a href="/form/{{ form.form }}/preview/elements/">single web page</a></li>
+</ul>
 
 {% endblock %}

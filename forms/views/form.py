@@ -3,7 +3,6 @@ from django.db.models import Count
 from django.http import Http404
 
 from ..models import Organisation, Form
-from ..runner import runners
 
 
 def forms(request):
@@ -13,20 +12,20 @@ def forms(request):
     return render(request, 'forms.html', {'forms': forms})
 
 
-def form(request, key=None, template='form.html'):
+def form(request, key=None, runner=None, template=None):
     form = Form.objects.get(form=key)
     organisations = Organisation.objects.filter(
         organisation__in=form.organisations.all())
 
-    return render(request, template, {
-        'form': form,
-        'organisations': organisations,
-        'runners': runners,
-    })
+    if not runner:
+        template = 'form.html'
+    elif runner in ['elements']:
+        template = 'runner/%s/form.html' % (runner)
 
+    if template:
+        return render(request, template, {
+            'form': form,
+            'organisations': organisations,
+        })
 
-def form_preview(request, key=None, runner=None):
-    if runner not in runners:
-        raise Http404("Not found")
-    template = 'runner/%s/preview.html' % (runner)
-    return form(request, key, template)
+    raise Http404("Not found")
