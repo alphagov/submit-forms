@@ -31,4 +31,7 @@ The data is [© Crown copyright](http://www.nationalarchives.gov.uk/information-
 and available under the terms of the [Open Government 3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/) licence.
 
 # Data model
+
+See [forms/models.py](forms/models.py):
+
 ![./model.svg](./model.svg "Data model")
