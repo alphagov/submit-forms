@@ -37,16 +37,56 @@ def form_json(request, key=None, runner=None, template=None):
         organisation__in=form.organisations.all())
 
     f = {
-            'form': form.form,
-            'heading': form.heading,
-            'description': form.description,
-            'phase': form.phase.phase,
-            'reference': form.reference,
-            'organisations': [],
-            'form_sections': [],
+        'form': form.form,
+        'heading': form.heading,
+        'description': form.description,
+        'phase': form.phase.phase,
+        'reference': form.reference,
+        'organisations': [],
+        'sections': [],
     }
 
-    for o in organisations:
-        f['organisations'].append({'organisation': o.organisation, 'name': o.name, 'website': o.website})
+    for org in organisations:
+        f['organisations'].append({
+            'organisation': org.organisation,
+            'name': org.name,
+            'website': org.website
+        })
+
+    for formsection in form.formsection_set.all():
+        section = formsection.section
+        s = {
+            'number': formsection.number,
+            'section': section.section,
+            'heading': section.heading,
+            'guidance': section.guidance,
+            'pages': [],
+        }
+
+        for sectionpage in section.sectionpage_set.all():
+            page = sectionpage.page
+            p = {
+                'number': sectionpage.number,
+                'page': page.page,
+                'pagetype': page.pagetype.pagetype,
+                'description': page.description,
+                'heading': page.heading,
+                'guidance': page.guidance,
+                'warning': page.warning,
+                'detail': page.detail,
+                'fields': [],
+            }
+            for pagefield in page.pagefield_set.all():
+                field = pagefield.field
+                p['fields'].append({
+                    'number': pagefield.number,
+                    'field': field.field,
+                    'inputtype': field.inputtype.inputtype,
+                    'datatype': field.datatype.datatype,
+                })
+
+            s['pages'].append(p)
+
+        f['sections'].append(s)
 
     return JsonResponse(f)
