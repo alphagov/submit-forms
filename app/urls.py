@@ -9,8 +9,8 @@ from httpproxy.views import HttpProxy
 
 admin.autodiscover()
 
-key = '(?P<key>[\w\d]{1,32})'
-runner = '(?P<runner>[\w\d]{1,256})'
+key = '(?P<key>[\w\d-]{1,32})'
+runner = '(?P<runner>[\w\d-]{1,256})'
 
 urlpatterns = [
 
