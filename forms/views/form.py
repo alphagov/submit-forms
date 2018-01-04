@@ -19,7 +19,7 @@ def form(request, key=None, runner=None, template=None):
 
     if not runner:
         template = 'form.html'
-    elif runner in ['elements']:
+    elif runner in ['elements', 'surveyjs']:
         template = 'runner/%s/form.html' % (runner)
 
     if template:

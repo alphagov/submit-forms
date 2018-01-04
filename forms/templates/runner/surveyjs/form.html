@@ -1,0 +1,87 @@
+{% load markdown %}
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://surveyjs.azureedge.net/0.98.5/survey.jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>{{ form.heading }}</h1>
+        <div id="surveyContainer"></div>
+      </div>
+    </main>
+
+    <script>
+      var surveyJSON = {
+        pages: [
+{% for section in form.sections.all %}
+  {% for sectionpage in section.sectionpage_set.all %}
+        {
+          title: "{{ sectionpage.page.heading|escapejs }}",
+          elements: [
+            {% if sectionpage.page.guidance %},
+            {
+              type: "html",
+              name: "guidance",
+              html: "* {{ sectionpage.page.guidance|markdownify|escapejs}}"
+            },{% endif %}
+
+            {% for field in sectionpage.page.fields.all %}
+            {
+              name: "{{ field.field }}",
+              title: "{{ field.label }}",
+              {% if field.inputtype|stringformat:"s" == 'text' %}type: "text"
+              {% elif field.inputtype|stringformat:"s" == 'textarea' %}type: "comment"
+              {% elif field.inputtype|stringformat:"s" == 'radio' %}type: "radiogroup",
+              choices: [
+              {% for list in field.whitelists.all %}
+                {% for item in list.items.all %}
+                {
+                  value: "{{ item.value }}",
+                  text: "{{ item.label|escapejs }}"
+                }{% if not forloop.last %},{% endif %}
+                {% endfor %}
+              {% endfor %}]
+              {% endif %}
+            }{% if not forloop.last %},{% endif %}
+            {% endfor %}]
+
+            {% if sectionpage.page.warning %},
+            {
+              type: "html",
+              name: "warning",
+              html: "! {{ sectionpage.page.warning|markdownify|escapejs}}"
+            }{% endif %}{% if sectionpage.page.detail %},
+            {
+              type: "html",
+              name: "detail",
+              html: "> {{ sectionpage.page.detail|markdownify|escapejs}}"
+            }
+            {% endif %}
+      },
+  {% endfor %}
+      ]}
+{% endfor %}
+
+      function sendDataToServer(survey) {
+        console.log('sendDataToServer', survey.data)
+        alert('survey sent')
+      }
+
+      $(function() {
+        Survey.Survey.cssType = "bootstrap";
+
+        var survey = new Survey.Model(surveyJSON);
+
+        $("#surveyContainer").Survey({
+          model: survey,
+          onComplete: sendDataToServer
+        });
+      })
+    </script>
+  </body>
+</html>
