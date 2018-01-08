@@ -63,6 +63,48 @@
 },
 {
     "model": "forms.field",
+    "pk": "honorific",
+    "fields": {
+        "label": "Title",
+        "hint": "",
+        "inputtype": "radio",
+        "datatype": "string",
+        "whitelists": [
+            6
+        ],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "marital-status",
+    "fields": {
+        "label": "Marital status",
+        "hint": "",
+        "inputtype": "radio",
+        "datatype": "string",
+        "whitelists": [
+            7
+        ],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
+    "pk": "n245-application",
+    "fields": {
+        "label": "I cannot pay the amount ordered and I wish to apply for",
+        "hint": "",
+        "inputtype": "checkbox",
+        "datatype": "string",
+        "whitelists": [
+            5
+        ],
+        "blacklists": []
+    }
+},
+{
+    "model": "forms.field",
     "pk": "name",
     "fields": {
         "label": "Full name",

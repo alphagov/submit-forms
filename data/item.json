@@ -86,5 +86,77 @@
         "label": "No",
         "value": "n"
     }
+},
+{
+    "model": "forms.item",
+    "pk": 12,
+    "fields": {
+        "label": "suspension of the warrant",
+        "value": "suspension_of_warrant"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 13,
+    "fields": {
+        "label": "a reduction in the instalment order",
+        "value": "reduction_in_instalment"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 14,
+    "fields": {
+        "label": "Mr",
+        "value": "mr"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 15,
+    "fields": {
+        "label": "Mrs",
+        "value": "mrs"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 16,
+    "fields": {
+        "label": "Miss",
+        "value": "miss"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 17,
+    "fields": {
+        "label": "Ms",
+        "value": "ms"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 18,
+    "fields": {
+        "label": "Single",
+        "value": "single"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 19,
+    "fields": {
+        "label": "Married",
+        "value": "married"
+    }
+},
+{
+    "model": "forms.item",
+    "pk": 20,
+    "fields": {
+        "label": "Other",
+        "value": "other"
+    }
 }
 ]

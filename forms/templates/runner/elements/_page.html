@@ -18,7 +18,7 @@
       {% for field in page.fields.all %}
 
         <label class="form-label" for="{{field.field}}">
-          {% if page.fields.count > 1 %}{{field.label}}{% endif %}
+          {% if page.fields.count > 0 %}{{field.label}}{% endif %}
           {% if field.hint %}<span class="form-hint">{{ field.hint }}</span>{% endif %}
         </label>
 

@@ -63,5 +63,18 @@
             "government-organisation:OT1056"
         ]
     }
+},
+{
+    "model": "forms.form",
+    "pk": 6,
+    "fields": {
+        "heading": "Application for suspension of a warrant and/or variation of an order",
+        "description": "",
+        "phase": "alpha",
+        "reference": "N245",
+        "organisations": [
+            "government-organisation:EA73"
+        ]
+    }
 }
 ]

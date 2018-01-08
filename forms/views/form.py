@@ -81,6 +81,7 @@ def form_json(request, key=None, runner=None, template=None):
                 p['fields'].append({
                     'number': pagefield.number,
                     'field': field.field,
+                    'label': field.label,
                     'inputtype': field.inputtype.inputtype,
                     'datatype': field.datatype.datatype,
                 })

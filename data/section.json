@@ -38,5 +38,13 @@
         "heading": "Register as a waste carrier",
         "guidance": ""
     }
+},
+{
+    "model": "forms.section",
+    "pk": 6,
+    "fields": {
+        "heading": "Main section",
+        "guidance": ""
+    }
 }
 ]

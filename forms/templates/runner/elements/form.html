@@ -44,7 +44,7 @@
       {% for field in sectionpage.page.fields.all %}
 
         <label class="form-label" for="{{field.field}}">
-          {% if page.fields.count > 1 %}{{field.label}}{% endif %}
+          {% if sectionpage.fields.count > 1 %}{{field.label}}{% endif %}
           {% if field.hint %}<span class="form-hint">{{ field.hint }}</span>{% endif %}
         </label>
 
